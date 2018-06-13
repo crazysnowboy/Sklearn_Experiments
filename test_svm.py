@@ -12,7 +12,9 @@ def Test():
     train_images = digits.data[:-1]
     train_lables = digits.target[:-1]
 
-    clf.fit(train_images,train_lables)  
+    clf.set_params(kernel='linear').fit(train_images, train_lables)  
+    # clf.set_params(kernel='rbf')..fit(train_images, train_lables)  
+    # clf.fit(train_images,train_lables)  
 
     test_image  = digits.data[-1:]
     res = clf.predict(test_image)
